@@ -1,0 +1,40 @@
+{
+  "name": "flexbox",
+  "version": "1.0.0",
+  "description": "flexbox demo done with react webpack sass",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --hot",
+    "build": "webpack --mode production"
+  },
+  "author": "kaliswaranS",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.4",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-react": "6.24.1",
+    "css-loader": "0.28.11",
+    "extract-text-webpack-plugin": "4.0.0-beta.0",
+    "html-webpack-plugin": "3.1.0",
+    "node-sass": "4.8.3",
+    "sass-loader": "6.0.7",
+    "style-loader": "0.20.3",
+    "url-loader": "1.0.1",
+    "webpack": "4.0.1",
+    "webpack-cli": "2.0.10",
+    "webpack-dev-server": "3.1.0"
+  },
+  "dependencies": {
+    "classnames": "2.2.5",
+    "file-loader": "1.1.11",
+    "lodash": "4.17.5",
+    "material-ui": "1.0.0-beta.40",
+    "prop-types": "15.6.1",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-router-dom": "4.2.2",
+    "reset-css": "3.0.0",
+    "sass-bem": "2.6.5"
+  }
+}

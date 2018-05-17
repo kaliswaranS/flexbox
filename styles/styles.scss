@@ -1,0 +1,399 @@
+@import "./../node_modules/sass-bem/_bem";
+@import './../node_modules/reset-css/_reset';
+@import './mixins';
+@import './variables';
+
+// root
+@include b('root') {
+
+  @include p('&', 'e:container') {
+    @include inherit();
+  }
+
+  * {
+    font-family: cursive;
+  }
+}
+
+// header
+@include b('header') {
+  flex: none;
+  padding: 15px;
+  border-bottom: 2px solid $primary-border-color;
+  background-color: $grey;
+}
+
+// main
+@include b('main') {
+  flex: 1 0 auto;
+  padding-bottom: 64px;
+  padding: 15px;
+}
+
+// footer
+@include b('footer') {
+  flex: none;
+  padding: 15px;
+  border-top: 2px solid $primary-border-color;
+  background-color: $grey;
+}
+
+@include b('navigation') {
+  display: flex;
+  @include e('nav-item') {
+    padding: 5px;
+    border: 1px solid #dfdfdf;
+    text-decoration: none;
+    color: #9a9a9a;
+    margin-right: 15px;
+    background-color: $white;
+
+    @include m('active') {
+      background-color: $primary-border-color;
+      color: $white;
+      border-color: #407a9d;
+    }
+  }
+}
+
+@include b('equal-heights') {
+  @include e('flex-item') {
+    border: 1px solid #6798b6;
+    padding: 15px;
+    margin: 15px;
+  }
+}
+
+@include b('vertical-center') {
+  @include v-center();
+  height: 300px;
+  border: 1px solid #6798b6;
+  padding: 15px;
+}
+
+@include b('horizontal-center') {
+  @include h-center();
+  border: 1px solid #6798b6;
+  padding: 15px;
+}
+
+@include b('center') {
+  @include center();
+  border: 1px solid #6798b6;
+  padding: 15px;
+  height: 200px;
+}
+
+@include b('start') {
+  @include flex-start();
+  border: 1px solid #6798b6;
+
+  @include e('flex-item') {
+    padding: 15px;
+    margin: 15px;
+  }
+}
+
+@include b('end') {
+  @include flex-end();
+  border: 1px solid #6798b6;
+
+  @include e('flex-item') {
+    padding: 15px;
+    margin: 15px;
+  }
+}
+
+@include b('space-between') {
+  @include space-between();
+  border: 1px solid #6798b6;
+
+  @include e('flex-item') {
+    padding: 15px;
+    margin: 15px;
+  }
+}
+
+@include b('wrap') {
+  border: 1px solid #6798b6;
+  flex-wrap: wrap;
+
+  @include e('flex-item') {
+    padding: 15px;
+    margin: 15px;
+  }
+}
+
+@include b('layout') {
+  height: 500px;
+  border: 2px solid $primary-border-color;
+
+  @include m('layout1') {
+    flex-direction: column;
+
+    @include e('main') {
+      background-color: $white;
+      flex: 1 0 auto;
+      display: flex;
+
+      @include e('sidebar') {
+        background: $primary-color--light;
+        flex: 0 0 200px;
+      }
+
+      @include e('main-content') {
+        flex: 1 0 auto;
+        background: $primary-color;
+      }
+    }
+  }
+
+  @include m('layout2') {
+    flex-direction: column;
+
+    @include e('header') {
+      height: 50px;
+      background-color: $primary-color--dark;
+      flex: none;
+    }
+
+    @include e('main') {
+      flex: 1 0 auto;
+      background: $primary-color;
+    }
+  }
+
+  @include m('layout3') {
+    @include e('header') {
+      height: 50px;
+      background-color: $primary-color--dark;
+      flex: none;
+    }
+
+    @include e('sidebar') {
+      background: $primary-color--light;
+      flex: 0 0 200px;
+    }
+
+    @include e('main') {
+      background-color: $white;
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+
+      @include e('main-content') {
+        flex: 1 0 auto;
+        background: $primary-color;
+      }
+    }
+
+    @include e('footer') {
+      height: 50px;
+      background-color: $primary-color--dark;
+      flex: none;
+    }
+  }
+
+  @include m('layout4') {
+    flex-direction: column;
+
+    @include e('header') {
+      height: 50px;
+      background-color: $primary-color--dark;
+      flex: none;
+    }
+
+    @include e('main') {
+      background-color: $white;
+      flex: 1 0 auto;
+      background: $primary-color;
+    }
+
+    @include e('footer') {
+      height: 50px;
+      background-color: $primary-color--dark;
+      flex: none;
+    }
+  }
+
+  @include m('layout5') {
+    @include e('sidebar') {
+      background: $primary-color--light;
+      flex: 0 0 200px;
+    }
+
+    @include e('main') {
+      background-color: $white;
+      flex: 1 0 auto;
+      display: flex;
+      flex-direction: column;
+
+      @include e('header') {
+        height: 50px;
+        background-color: $primary-color--dark;
+        flex: none;
+      }
+
+      @include e('main-content') {
+        flex: 1 0 auto;
+        background: $primary-color;
+      }
+      
+      @include e('footer') {
+        height: 50px;
+        background-color: $primary-color--dark;
+        flex: none;
+      }
+    }
+  }
+
+  @include m('layout6') {
+    flex-direction: column;
+
+    @include e('header') {
+      height: 50px;
+      background-color: $primary-color--dark;
+      flex: none;
+    }
+
+    @include e('main') {
+      background-color: $white;
+      flex: 1 0 auto;
+      display: flex;
+
+      @include e('sidebar') {
+        background: $primary-color--light;
+        flex: 0 0 200px;
+      }
+
+      @include e('main-content') {
+        flex: 1 0 auto;
+        background: $primary-color;
+      }
+    }
+
+    @include e('footer') {
+      height: 50px;
+      background-color: $primary-color--dark;
+      flex: none;
+    }
+  }
+
+  @include m('layout7') {
+    flex-direction: column;
+
+    @include e('header') {
+      height: 50px;
+      background-color: $primary-color--dark;
+      flex: none;
+    }
+
+    @include e('main') {
+      background-color: $white;
+      flex: 1 0 auto;
+      display: flex;
+
+      @include e('sidebar') {
+        background: $primary-color--light;
+        flex: 0 0 200px;
+      }
+
+      @include e('main-content') {
+        flex: 1 0 auto;
+        background: $primary-color;
+      }
+    }
+
+    @include e('footer') {
+      height: 50px;
+      background-color: $primary-color--dark;
+      flex: none;
+    }
+  }
+
+  @include m('layout8') {
+    flex-direction: column;
+
+    @include e('header') {
+      height: 50px;
+      background-color: $primary-color--dark;
+      flex: none;
+    }
+
+    @include e('main') {
+      background-color: $white;
+      flex: 1 0 auto;
+      display: flex;
+
+      @include e('sidebar') {
+        background: $primary-color--light;
+        flex: 0 0 200px;
+      }
+
+      @include e('main-content') {
+        flex: 1 0 auto;
+        background: $primary-color;
+        display: flex;
+        padding: 20px;
+
+        @include e('inner-content') {
+          background: $white;
+          flex: 1 0 auto;
+        }
+      }
+    }
+
+    @include e('footer') {
+      height: 50px;
+      background-color: $primary-color--dark;
+      flex: none;
+    }
+  }
+
+  @include m('layout9') {
+
+    @include e('main') {
+      background: $primary-color;
+      flex: 1 0 auto;
+      @include center();
+
+      @include e('inner-content') {
+        background: $white;
+        height: 400px;
+        width: 500px;
+      }
+    }
+  }
+
+  @include m('layout10') {
+
+    @include e('main') {
+      background: $primary-color;
+      flex: 1 0 auto;
+      @include center();
+      padding: 0 10px;
+
+      @include e('inner-content') {
+        background: $white;
+        height: 400px;
+        flex-grow: 1;
+        margin: 10px;
+        border-radius: 10px;
+
+        @include m('flex-grow2') {
+          flex-grow: 2;
+        }
+      }
+    }
+  }
+}
+
+// Utilities
+@include b('flex') {
+  display: flex;
+}
+
+@include b('error') {
+  color: $red;
+  font-size: 11px;
+}
