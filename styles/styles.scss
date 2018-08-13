@@ -40,6 +40,8 @@
 
 @include b('navigation') {
   display: flex;
+  flex-wrap: wrap;
+
   @include e('nav-item') {
     padding: 5px;
     border: 1px solid #dfdfdf;
@@ -47,6 +49,7 @@
     color: #9a9a9a;
     margin-right: 15px;
     background-color: $white;
+    margin: 5px;
 
     @include m('active') {
       background-color: $primary-border-color;
